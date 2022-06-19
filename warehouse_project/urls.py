@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from warehouse_app import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
+    path('grades/', views.grade_list),
+    path('grades/<int:id>', views.grade_detail),
+
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
