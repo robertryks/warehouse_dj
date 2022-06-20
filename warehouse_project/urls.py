@@ -21,9 +21,15 @@ from rest_framework.urlpatterns import format_suffix_patterns
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
+    # gatunki stali
     path('grades/', views.grade_list),
     path('grades/<int:id>', views.grade_detail),
-
+    # średnice prętów
+    path('dimensions/', views.dimension_list),
+    path('dimensions/<int:id>', views.dimension_detail),
+    # średnice prętów
+    path('bars/', views.bar_list),
+    path('bars/<int:id>', views.bar_detail),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
